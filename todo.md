@@ -18,6 +18,8 @@ https://us-west-2.console.aws.amazon.com/appsync/home?region=us-west-2#/f5d4hqbw
 
 > sudo yarn add aws-amplify aws-amplify-react
 
+>  then make the changes aws-configure at the home file index.js. 
+
 >amplify publish 
 
 
