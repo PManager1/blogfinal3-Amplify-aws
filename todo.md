@@ -2,10 +2,23 @@
 amplify init 
 
 amplify add api 
+(  added schema )
 
-amplify push 
+>amplify push  ( do - after schma is there )
 
-amplify publish 
+( after chaning the schema when we push, it will update the api 
+code based on the schmea changes)
+
+> amplify console api  ( this will open the api in browser )
+
+https://us-west-2.console.aws.amazon.com/appsync/home?region=us-west-2#/f5d4hqbwjjgvnafq52udhwgwiq/v1/schema
+
+
+( go on UI and add posts and comments etc in the table)
+
+> sudo yarn add aws-amplify aws-amplify-react
+
+>amplify publish 
 
 
 
