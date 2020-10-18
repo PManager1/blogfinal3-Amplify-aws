@@ -11,9 +11,6 @@ export default class DisplayPosts extends Component{
     state = {
         posts: []
     }
-    componentDidMount = async() =>{
-        this.getPosts()
-    }
 
     getPosts = async () => {
         const result = await API.graphql (graphqlOperation(listPosts))
@@ -21,8 +18,14 @@ export default class DisplayPosts extends Component{
         this.setState ({ posts: result.data.listPosts.items})
     };
 
+    
+    componentDidMount = async() =>{
+        this.getPosts()
+    
 
-        createPostListener = API.graphql(graphqlOperation(onCreatePost))
+    
+
+    this.createPostListener = API.graphql(graphqlOperation(onCreatePost))
     .subscribe({
         next: postData => {
              const newPost = postData.value.data.onCreatePost
@@ -34,7 +37,7 @@ export default class DisplayPosts extends Component{
         }
     })
 
-        deletePostListener = API.graphql(graphqlOperation(onDeletePost))
+    this.deletePostListener = API.graphql(graphqlOperation(onDeletePost))
        .subscribe({
             next: postData => {
                   
@@ -44,7 +47,7 @@ export default class DisplayPosts extends Component{
             }
        })
 
-    updatePostListener = API.graphql(graphqlOperation(onUpdatePost))
+       this.updatePostListener = API.graphql(graphqlOperation(onUpdatePost))
        .subscribe({
             next: postData => {
                  const { posts } = this.state
@@ -60,6 +63,15 @@ export default class DisplayPosts extends Component{
 
             }
        })
+}
+
+       componentWillUnmount() {
+        this.createPostListener.unsubscribe()
+        this.deletePostListener.unsubscribe()
+        this.updatePostListener.unsubscribe()
+        // this.createPostCommentListener.unsubscribe()
+        // this.createPostLikeListener.unsubscribe()
+    }
 
  
     render(){
