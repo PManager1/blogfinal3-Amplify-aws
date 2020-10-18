@@ -56,13 +56,13 @@ class EditPost extends Component {
     }
     componentWillMount = async () => {
 
-        await Auth.currentUserInfo()
-            .then(user => {
-                 this.setState({
-                     postOwnerId: user.attributes.sub,
-                     postOwnerUsername: user.username 
-                 })
-            })
+        // await Auth.currentUserInfo()
+        //     .then(user => {
+        //          this.setState({
+        //              postOwnerId: user.attributes.sub,
+        //              postOwnerUsername: user.username 
+        //          })
+        //     })
          
     }
 

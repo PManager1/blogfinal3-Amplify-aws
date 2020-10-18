@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import { listPosts } from '../graphql/queries'
 import { API, graphqlOperation } from 'aws-amplify'
+import DeletePost from './DeletePost'
+import EditPost from './EditPost'
+
 
 export default class DisplayPosts extends Component{
 
@@ -30,6 +33,12 @@ export default class DisplayPosts extends Component{
                          <time style={{ fontStyle: "italic" }}> on: { new Date(post.createdAt).toDateString()  }  </time>
                     </span>
                     <p> {post.postBody} </p>
+
+
+                <span>
+                <DeletePost data={post}/> <EditPost {...post} />   
+
+                </span>
                 </div>
             )
         })
