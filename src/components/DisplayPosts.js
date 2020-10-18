@@ -21,9 +21,6 @@ export default class DisplayPosts extends Component{
     
     componentDidMount = async() =>{
         this.getPosts()
-    
-
-    
 
     this.createPostListener = API.graphql(graphqlOperation(onCreatePost))
     .subscribe({

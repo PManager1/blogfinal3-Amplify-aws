@@ -27,6 +27,8 @@ https://us-west-2.console.aws.amazon.com/appsync/home?region=us-west-2#/f5d4hqbw
 Convert edit fild of 3000 into a navigation and then 
 make the 1900 into 3000
 
+---- comments = multiple labels ---- 
+Then filter the posts based on comments/labels ( high priority/ low priority ). 
 
 
 
