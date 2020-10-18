@@ -8,8 +8,8 @@ import { createPost } from '../graphql/mutations'
 class CreatePost extends Component {
 
     state = {
-        postOwnerId: "",
-        postOwnerUsername: "",
+        postOwnerId: "1",
+        postOwnerUsername: "Jay",
         postTitle: "",
         postBody: ""
     }
