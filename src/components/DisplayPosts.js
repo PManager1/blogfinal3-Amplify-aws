@@ -4,6 +4,8 @@ import { API, graphqlOperation } from 'aws-amplify'
 import { onCreatePost, onDeletePost, onUpdatePost, onCreateComment, onCreateLike } from '../graphql/subscriptions'
 import DeletePost from './DeletePost'
 import EditPost from './EditPost'
+import CreateCommentPost from './CreateCommentPost'
+import CommentPost from './CommentPost'
 
 
 export default class DisplayPosts extends Component{
@@ -18,7 +20,7 @@ export default class DisplayPosts extends Component{
         this.setState ({ posts: result.data.listPosts.items})
     };
 
-    
+
     componentDidMount = async() =>{
         this.getPosts()
 
@@ -86,8 +88,13 @@ export default class DisplayPosts extends Component{
 
                 <span>
                 <DeletePost data={post}/> <EditPost {...post} />   
-
                 </span>
+
+                <span>
+                        <CreateCommentPost postId={post.id} />
+
+                    </span>
+                    
                 </div>
             )
         })
