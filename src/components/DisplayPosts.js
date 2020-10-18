@@ -25,9 +25,9 @@ export default class DisplayPosts extends Component{
             return (
                 <div className="posts" style={rowStyle} key={post.id}> 
                     <h1 > {post.postTitle} </h1>
-                    <span>
+                    <span style={{ fontStyle: "italic", color: "#0ca5e297"  }}> 
                          wrote by:  {post.postOwnerUsername}
-                         <time>  on: { new Date(post.createdAt).toDateString()  }  </time>
+                         <time style={{ fontStyle: "italic" }}> on: { new Date(post.createdAt).toDateString()  }  </time>
                     </span>
                     <p> {post.postBody} </p>
                 </div>
