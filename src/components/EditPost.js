@@ -63,10 +63,10 @@ class EditPost extends Component {
         //              postOwnerUsername: user.username 
         //          })
         //     })
-         
     }
 
     render() {
+         console.log(' 70-  Edit Post props =', this.props );
          return (
              <>
              { this.state.show && (

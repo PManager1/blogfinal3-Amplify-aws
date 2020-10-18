@@ -91,7 +91,7 @@ export default class DisplayPosts extends Component{
                 </span>
 
                 <span>
-                        <CreateCommentPost postId={post.id} />
+                        {/* <CreateCommentPost postId={post.id} /> */}
                     </span>
                     
                 </div>
