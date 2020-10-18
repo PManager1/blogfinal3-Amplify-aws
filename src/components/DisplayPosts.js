@@ -23,7 +23,7 @@ export default class DisplayPosts extends Component{
         const { posts } = this.state; 
         return posts.map((post)  =>{
             return (
-                <div className="posts" key={post.id}> 
+                <div className="posts" style={rowStyle} key={post.id}> 
                     <h1 > {post.postTitle} </h1>
                     <span>
                          wrote by:  {post.postOwnerUsername}
@@ -37,3 +37,10 @@ export default class DisplayPosts extends Component{
     }
 
 };
+
+const rowStyle = {
+    background: '#f4f4f4', 
+    padding: '10px',
+    border: '1px #ccc dotted',
+    margin: '14px', 
+}
